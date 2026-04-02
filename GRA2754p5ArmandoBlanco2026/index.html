@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Drag-and-Drop | Armando Blanco 2026</title>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+<style>
+
+wrapper {
+    margin: auto;
+    width: 1000px;
+    display: block; 
+	background-color: rgba(255,220,154,0.75)
+}
+body {
+    margin: 0;
+	background-image: url("background.jpg");
+    background-size: cover;
+}
+#canvas div:empty {
+    border: thin solid black;
+    width: 200px;
+    height: 200px;
+    margin: -0.5px -2.5px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+#canvas div:not(:empty){
+    border:none;
+    width: 200px;
+    height: 200px;
+    margin:-0.5px -2.5px;
+    display: inline-block;
+    vertical-align: top;
+	box-sizing: border-box;
+}
+#pieces div{
+	width: 200px;
+	height: 515px;
+	display:inline-block;
+	vertical-align: top;
+	border:thin solid black;
+}
+#pieces{
+    vertical-align: top;
+    background-color: rgba(208,249,255,0.50);
+}
+
+#pieces{
+	display:inline-block;
+	margin:0 30px ;		
+}
+#canvas{
+	display:inline-block;
+	margin:0px 30px;
+	vertical-align: top;
+	background-color: rgba(208,249,255,0.50);
+}
+#city{
+	width:1300px;
+	height: auto;
+	}
+	
+#pieces div img{
+	width: 80px;
+	height: auto;
+	margin: 9px;
+}	
+#canvas div img{
+	width: 100%;
+	height: auto;
+}
+h1{
+    text-align: center;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    color: rgba(1,0,152,1.00);
+}
+p{
+	color: rgba(1,0,152,1.00);
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+</style>
+</head>
+
+<body>
+<wrapper>
+ <header>
+	  <h1> BUILD A CITY!!!</h1>
+</header>
+	<div id="city">
+	<div id="pieces">
+<div id="drop10" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="city2_2.png" id="drag5" draggable="true" ondragstart="drag(event)">
+<img src="city1_3.png" id="drag3" draggable="true" ondragstart="drag(event)">
+<img src="city2_1.png" id="drag4" draggable="true" ondragstart="drag(event)">
+<img src="city3_3.png" id="drag9" draggable="true" ondragstart="drag(event)">
+<img src="city3_1.png" id="drag7" draggable="true" ondragstart="drag(event)">
+<img src="city2_3.png" id="drag6" draggable="true" ondragstart="drag(event)">
+<img src="city1_2.png" id="drag2" draggable="true" ondragstart="drag(event)">
+<img src="city3_2.png" id="drag8" draggable="true" ondragstart="drag(event)">
+<img src="city1_1.png" id="drag1" draggable="true" ondragstart="drag(event)">
+		</div>
+	</div>
+	
+	<div id="canvas">
+  <div id="drop01" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <div id="drop02" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <div id="drop03" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<br>
+  <div id="drop04" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <div id="drop05" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <div id="drop6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<br>
+  <div id="drop07" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <div id="drop08" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <div id="drop09" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		</div>
+		</div>
+  <footer>
+	  <p style="padding:5px;">&copy; 2026, Armando Blanco
+This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
+</footer>
+</wrapper>
+</body>
+</html>
